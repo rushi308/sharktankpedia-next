@@ -15,13 +15,15 @@ export default function Home({featuredProducts,recentProducts}:HomeProps) {
     </>
   );
 }
-export async function getServerSideProps() {
+export async function getServerSideProps({req,res}:any) {
   // Call an external API endpoint to get products
   try{
-    loaderRef?.current?.show();
+    res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=10, stale-while-revalidate=59'
+    )
     const featuredProducts = await getProducts(NaN, true);
     const recentProducts = await getProducts(1000, false);
-    // loaderRef?.current?.hide();
     return {
       props: {
         featuredProducts: featuredProducts.products,
