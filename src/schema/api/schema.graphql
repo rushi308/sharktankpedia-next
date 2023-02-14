@@ -1,0 +1,194 @@
+input MetaDataInput {
+  name: String!
+  value: String!
+}
+
+input DealInput {
+  sharkName: String!
+  amount: String!
+  valuation: String!
+  equity: Float!
+  debt: String
+  debtInterest: Int
+}
+
+input ImageInput {
+  contentType: String!
+  base64: String!
+}
+
+input SalesMetaDataInput {
+  name: String
+  value: Float
+}
+
+input SalesInput {
+  unit: String
+  values: [SalesMetaDataInput]
+}
+
+input ProductInput {
+  id: String
+  title: String!
+  companyName: String!
+  amazonLink: String
+  flipkartLink: String
+  productDetails: String
+  website: String
+  marketPlace: [MetaDataInput]
+  appStoreLink: String
+  playStoreLink: String
+  established: Int
+  founders: String
+  numberOfEmployees: Int
+  story: String
+  productFeatures: [String]
+  valueChain: [String]
+  originalAsk: String
+  sales: SalesInput
+  salesSplit: SalesInput
+  unitEconomics: [MetaDataInput]
+  statistics: [MetaDataInput]
+  counterOffer: [DealInput]
+  dealClosed: DealInput
+  productImage: String
+  informationImage: String
+  categories: [String]!
+  season: Int!
+  episode: Int!
+  precedence: Int!
+  featured: Boolean!
+  createdAt: AWSDateTime
+}
+
+## Types
+
+type MetaData {
+  name: String!
+  value: String!
+}
+
+type Deal {
+  sharkName: String!
+  amount: String!
+  valuation: String!
+  equity: Float!
+  debt: String
+  debtInterest: Int
+}
+
+type SalesMetaData {
+  name: String
+  value: Float
+}
+
+type Sales {
+  unit: String
+  values: [SalesMetaData]
+}
+
+type Product {
+  id: String!
+  title: String!
+  companyName: String!
+  amazonLink: String
+  flipkartLink: String
+  productDetails: String
+  website: String
+  marketPlace: [MetaData]
+  appStoreLink: String
+  playStoreLink: String
+  established: Int
+  founders: String
+  numberOfEmployees: Int
+  story: String!
+  productFeatures: [String]
+  valueChain: [String]
+  originalAsk: String!
+  sales: Sales
+  salesSplit: Sales
+  unitEconomics: [MetaData]
+  statistics: [MetaData]
+  counterOffer: [Deal]
+  dealClosed: Deal
+  productImage: String
+  informationImage: String
+  categories: [String]!
+  season: Int!
+  episode: Int!
+  precedence: Int!
+  featured: Boolean!
+  createdAt: AWSDateTime
+}
+
+type Products {
+  products: [Product]!
+}
+
+type ImageUpload {
+  contentType: String!
+  base64: String!
+}
+
+type ImageUploadSuccess {
+  url: String!
+}
+
+# Outputs
+
+enum Status {
+  OPEN
+  CLOSED
+}
+
+## Errors
+
+type ValidationErrorField {
+  field: String!
+  errorMessages: [String!]!
+}
+
+type ValidationError {
+  message: String!
+  data: [ValidationErrorField!]!
+}
+
+type ServerError {
+  message: String!
+}
+
+# Query
+
+## GetProduct
+
+union GetProductDetailResult = Product | ValidationError | ServerError
+
+input GetProductDetailInput {
+  id: String
+}
+
+## GetProducts
+
+union GetProductsResult = Products | ValidationError | ServerError
+
+input GetProductsInput {
+  limit: Int
+  featured: Boolean
+}
+
+type Query {
+  product(input: GetProductDetailInput!): GetProductDetailResult
+  products(input: GetProductsInput): GetProductsResult
+}
+
+# Mutation
+
+## SubmitProductCreation
+
+union ProductCreationResult = Product | ValidationError | ServerError
+union ImageUploadResult = ImageUploadSuccess | ValidationError | ServerError
+
+type Mutation {
+  product(input: ProductInput!): ProductCreationResult @aws_iam @aws_api_key
+  imageUpload(input: ImageInput!): ImageUploadResult @aws_iam @aws_api_key
+}

@@ -1,0 +1,245 @@
+mutation MutateProduct($input: ProductInput!) {
+  product(input: $input) {
+    ... on Product {
+      __typename
+      id
+      title
+      companyName
+      numberOfEmployees
+      productFeatures
+      productImage
+      informationImage
+      season
+      episode
+      precedence
+      featured
+      createdAt
+    }
+    ... on ValidationError {
+      __typename
+      message
+      data {
+        field
+        errorMessages
+      }
+    }
+    ... on ServerError {
+      __typename
+      message
+    }
+  }
+}
+
+mutation MutateImage($input: ImageInput!) {
+  imageUpload(input: $input) {
+    ... on ImageUploadSuccess {
+      __typename
+      url
+    }
+    ... on ValidationError {
+      __typename
+      message
+      data {
+        field
+        errorMessages
+      }
+    }
+    ... on ServerError {
+      __typename
+      message
+    }
+  }
+}
+
+query product($input: GetProductDetailInput!) {
+  product(input: $input) {
+    ... on Product {
+      __typename
+      id
+      title
+      companyName
+      amazonLink
+      productDetails
+      flipkartLink
+      website
+      marketPlace {
+        __typename
+        name
+        value
+      }
+      appStoreLink
+      playStoreLink
+      established
+      founders
+      numberOfEmployees
+      story
+      productFeatures
+      valueChain
+      originalAsk
+      sales {
+        __typename
+        unit
+        values {
+          __typename
+          name
+          value
+        }
+      }
+      salesSplit {
+        __typename
+        unit
+        values {
+          __typename
+          name
+          value
+        }
+      }
+      unitEconomics {
+        __typename
+        name
+        value
+      }
+      statistics {
+        __typename
+        name
+        value
+      }
+      counterOffer {
+        __typename
+        sharkName
+        amount
+        valuation
+        equity
+        debt
+        debtInterest
+      }
+      dealClosed {
+        __typename
+        sharkName
+        amount
+        valuation
+        equity
+        debt
+        debtInterest
+      }
+      productImage
+      informationImage
+      categories
+      season
+      episode
+      precedence
+      featured
+      createdAt
+    }
+    ... on ValidationError {
+      __typename
+      message
+      data {
+        field
+        errorMessages
+      }
+    }
+    ... on ServerError {
+      __typename
+      message
+    }
+  }
+}
+
+query products($input: GetProductsInput!) {
+  products(input: $input) {
+    ... on Products {
+      __typename
+      products {
+        __typename
+        id
+        title
+        companyName
+        amazonLink
+        flipkartLink
+        productDetails
+        website
+        marketPlace {
+          __typename
+          name
+          value
+        }
+        appStoreLink
+        playStoreLink
+        established
+        founders
+        numberOfEmployees
+        story
+        productFeatures
+        valueChain
+        originalAsk
+        sales {
+          __typename
+          unit
+          values {
+            __typename
+            name
+            value
+          }
+        }
+        salesSplit {
+          __typename
+          unit
+          values {
+            __typename
+            name
+            value
+          }
+        }
+        unitEconomics {
+          __typename
+          name
+          value
+        }
+        statistics {
+          __typename
+          name
+          value
+        }
+        counterOffer {
+          __typename
+          sharkName
+          amount
+          valuation
+          equity
+          debt
+          debtInterest
+        }
+        dealClosed {
+          __typename
+          sharkName
+          amount
+          valuation
+          equity
+          debt
+          debtInterest
+        }
+        productImage
+        informationImage
+        categories
+        season
+        episode
+        precedence
+        featured
+        createdAt
+      }
+    }
+    ... on ValidationError {
+      __typename
+      message
+      data {
+        field
+        errorMessages
+      }
+    }
+    ... on ServerError {
+      __typename
+      message
+    }
+  }
+}
