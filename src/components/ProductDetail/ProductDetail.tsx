@@ -265,6 +265,7 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
                 loader={myLoader}
                 width={100}
                 height={100}
+                style={{minHeight:"198px"}}
               />
             </div>
             <div className="col-md-8 col-lg-8 main-content">
