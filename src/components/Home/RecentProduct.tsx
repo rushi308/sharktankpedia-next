@@ -77,7 +77,7 @@ function ProductList({ products }: ProductListProp) {
                   <span className="d-inline-block mt-1 mb-3">
                     By <Link href="/">SharkTankPedia</Link>
                   </span>
-                  <span>{"-"} {convertDate(product?.createdAt ?? "")}</span>
+                  <span>{" -"} {convertDate(product?.createdAt ?? "")}</span>
                 </div>
                 <p>
                   {product?.productDetails

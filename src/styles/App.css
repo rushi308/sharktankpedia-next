@@ -37,6 +37,7 @@
   min-height: 198px;
   max-height: 198px;
   width: 100%;
+  object-fit: cover;
 }
 
 .darkBackground {
