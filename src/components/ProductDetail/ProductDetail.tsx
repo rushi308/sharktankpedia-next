@@ -146,8 +146,7 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
       product?.sales &&
       product?.sales?.values &&
       product?.sales?.values?.length > 0
-    ) {
-      console.log(product, "product");
+    ) {;
       const salesLabel: any = [];
       const salesValue: any = [];
       product?.sales?.values?.map((sale: any) => {
@@ -239,6 +238,7 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
             </div>
           </div>
         </div>
+
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12 col-lg-12">
@@ -266,11 +266,12 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
                 loader={myLoader}
                 width={100}
                 height={100}
-                style={{ minHeight: "198px" }}
+                style={{ minHeight: "198px" , objectFit:"cover"}}
               />
             </div>
             <div className="col-md-8 col-lg-8 main-content">
               <div className="post-content-body">
+                <h5 style={{ fontWeight: "500" }}>{product?.title}</h5>
                 <p className="text-align-justify">{product?.productDetails}</p>
               </div>
               <div className="pt-2">
