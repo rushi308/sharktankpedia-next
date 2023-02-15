@@ -224,8 +224,9 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
       <div
         className="site-cover site-cover-sm same-height overlay single-page coverBg"
         style={{
+          objectFit: "cover",
           backgroundImage:
-            "url(https://i.pinimg.com/originals/4d/7d/57/4d7d57c57a18a708860cca50e98e00f5.gif)",
+            "url(https://sharktank-pedia-image-upload-bucket.s3.amazonaws.com/image-1676494408517.jpg)",
         }}
       >
         <div className="container">
@@ -266,7 +267,7 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
                 loader={myLoader}
                 width={100}
                 height={100}
-                style={{ minHeight: "198px" }}
+                style={{ minHeight: "198px", objectFit: "cover" }}
               />
             </div>
             <div className="col-md-8 col-lg-8 main-content">
