@@ -147,6 +147,7 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
       product?.sales?.values &&
       product?.sales?.values?.length > 0
     ) {
+      console.log(product, "product");
       const salesLabel: any = [];
       const salesValue: any = [];
       product?.sales?.values?.map((sale: any) => {
@@ -265,7 +266,7 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
                 loader={myLoader}
                 width={100}
                 height={100}
-                style={{minHeight:"198px"}}
+                style={{ minHeight: "198px" }}
               />
             </div>
             <div className="col-md-8 col-lg-8 main-content">
@@ -414,25 +415,41 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
                       )}
                       {product?.amazonLink ? (
                         <p className="p-card">
-                          <button className="ctaButton">
-                            <span>Buy on Amazon</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                              <path d="M1,5 L11,5"></path>
-                              <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                          </button>
+                          <Link
+                            href={product?.amazonLink}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <button className="ctaButton">
+                              <span>Buy on Amazon</span>
+                              <svg
+                                viewBox="0 0 13 10"
+                                height="10px"
+                                width="15px"
+                              >
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                              </svg>
+                            </button>
+                          </Link>
                         </p>
                       ) : (
                         <></>
                       )}
                       {product?.flipkartLink ? (
-                        <button className="ctaButton">
-                          <span>Buy on Flipkart</span>
-                          <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                          </svg>
-                        </button>
+                        <Link
+                          href={product?.flipkartLink}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <button className="ctaButton">
+                            <span>Buy on Flipkart</span>
+                            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                              <path d="M1,5 L11,5"></path>
+                              <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                          </button>
+                        </Link>
                       ) : (
                         <></>
                       )}
