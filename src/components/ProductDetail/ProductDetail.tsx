@@ -488,14 +488,14 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
                   {product?.dealClosed ? (
                     <h5 className="card-title" style={{ fontWeight: "bold" }}>
                       {product?.dealClosed?.amount} for{" "}
-                      {product?.dealClosed?.equity}% &nbsp;
+                      {product?.dealClosed?.equity}% Equity &nbsp;
                       {product?.dealClosed?.debt
                         ? product?.dealClosed?.debt &&
                           "& " +
                             product?.dealClosed?.debt +
                             " Debt for " +
                             product?.dealClosed?.debtInterest +
-                            "%"
+                            "% Equity"
                         : ""}
                     </h5>
                   ) : (
