@@ -529,7 +529,7 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
                             product?.dealClosed?.debt +
                             " Debt for " +
                             product?.dealClosed?.debtInterest +
-                            "% Equity"
+                            "% Interest"
                         : ""}
                     </h5>
                   ) : (
