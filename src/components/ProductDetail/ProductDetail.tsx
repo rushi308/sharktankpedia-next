@@ -146,7 +146,7 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
       product?.sales &&
       product?.sales?.values &&
       product?.sales?.values?.length > 0
-    ) {;
+    ) {
       const salesLabel: any = [];
       const salesValue: any = [];
       product?.sales?.values?.map((sale: any) => {
@@ -266,7 +266,7 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
                 loader={myLoader}
                 width={100}
                 height={100}
-                style={{ minHeight: "198px" , objectFit:"cover"}}
+                style={{ minHeight: "198px", objectFit: "cover" }}
               />
             </div>
             <div className="col-md-8 col-lg-8 main-content">
@@ -438,53 +438,71 @@ const ProductDetail = ({ productDetail }: ProductDetailProps) => {
                         <></>
                       )}
                       {product?.flipkartLink ? (
-                        <Link
-                          href={product?.flipkartLink}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <button className="ctaButton">
-                            <span>Buy on Flipkart</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                              <path d="M1,5 L11,5"></path>
-                              <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                          </button>
-                        </Link>
+                        <p className="p-card">
+                          <Link
+                            href={product?.flipkartLink}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <button className="ctaButton">
+                              <span>Buy on Flipkart</span>
+                              <svg
+                                viewBox="0 0 13 10"
+                                height="10px"
+                                width="15px"
+                              >
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                              </svg>
+                            </button>
+                          </Link>
+                        </p>
                       ) : (
                         <></>
                       )}
                       {product?.appStoreLink ? (
-                        <Link
-                          href={product?.appStoreLink}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <button className="ctaButton">
-                            <span>Download from AppStore</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                              <path d="M1,5 L11,5"></path>
-                              <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                          </button>
-                        </Link>
+                        <p className="p-card">
+                          <Link
+                            href={product?.appStoreLink}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <button className="ctaButton">
+                              <span>Download from AppStore</span>
+                              <svg
+                                viewBox="0 0 13 10"
+                                height="10px"
+                                width="15px"
+                              >
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                              </svg>
+                            </button>
+                          </Link>
+                        </p>
                       ) : (
                         <></>
                       )}
                       {product?.playStoreLink ? (
-                        <Link
-                          href={product?.playStoreLink}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <button className="ctaButton">
-                            <span>Download from PlayStore</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                              <path d="M1,5 L11,5"></path>
-                              <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                          </button>
-                        </Link>
+                        <p className="p-card">
+                          <Link
+                            href={product?.playStoreLink}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <button className="ctaButton">
+                              <span>Download from PlayStore</span>
+                              <svg
+                                viewBox="0 0 13 10"
+                                height="10px"
+                                width="15px"
+                              >
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                              </svg>
+                            </button>
+                          </Link>
+                        </p>
                       ) : (
                         <></>
                       )}
