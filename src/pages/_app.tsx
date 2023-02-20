@@ -25,17 +25,21 @@ Amplify.configure({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-
-  Router.events.on("routeChangeStart" ,(url:string) => {
+  Router.events.on("routeChangeStart", (url: string) => {
     loaderRef?.current?.show();
-  })
+  });
 
-  Router.events.on("routeChangeComplete" ,(url:string) => {
+  Router.events.on("routeChangeComplete", (url: string) => {
     loaderRef?.current?.hide();
-  })
+  });
   return (
     <>
       <Head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7553767508353117"
+          crossOrigin="anonymous"
+        ></Script>
         <meta
           name="description"
           content="Stay up-to-date with all the latest news, information and highlights from Shark Tank India Season 2. Learn about the contestants, judges, and more."
@@ -99,7 +103,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Script>
       <div className="App">
         <div className="site-wrap">
-          <Spinner/>
+          <Spinner />
           <MobileMenu />
           <Header />
           <Component {...pageProps} />
