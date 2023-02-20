@@ -35,11 +35,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7553767508353117"
-          crossOrigin="anonymous"
-        ></Script>
         <meta
           name="description"
           content="Stay up-to-date with all the latest news, information and highlights from Shark Tank India Season 2. Learn about the contestants, judges, and more."
@@ -83,6 +78,13 @@ export default function App({ Component, pageProps }: AppProps) {
           crossOrigin="anonymous"
         ></link>
       </Head>
+      <Script
+        id="Adsense-id"
+        data-ad-client="ca-pub-7553767508353117"
+        async
+        strategy="beforeInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
       <Script
         src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
