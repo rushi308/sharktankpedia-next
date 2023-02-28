@@ -79,7 +79,7 @@ export default function App({ Component, pageProps }: AppProps) {
         ></link>
       </Head>
       <Script
-        id="Adsense-id"
+        id="Adsense-id-next"
         data-ad-client="ca-pub-7553767508353117"
         async
         strategy="beforeInteractive"
