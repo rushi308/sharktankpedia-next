@@ -83,7 +83,16 @@ export default function App({ Component, pageProps }: AppProps) {
         data-ad-client="ca-pub-7553767508353117"
         async
         strategy="beforeInteractive"
+        crossOrigin="anonymous"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
+      <Script
+        id="Adsense-id"
+        data-ad-client="ca-pub-7553767508353117"
+        async
+        strategy="beforeInteractive"
+        crossOrigin="anonymous"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7553767508353117"
       />
       <Script
         src="https://code.jquery.com/jquery-3.6.3.min.js"
