@@ -5,6 +5,8 @@ import { loaderRef } from "../../components/Spinner";
 import { Helmet } from "react-helmet";
 import Image from "next/image";
 import Link from "next/link";
+// import searchImage from "../../assets/images/search.png";
+// import { Col, Input, InputGroup, InputGroupText, Row } from "reactstrap";
 
 type ProductListProp = {
   products: Product[];
@@ -14,11 +16,26 @@ type ShowMoreProp = {
   onClick: () => void;
 };
 
-function Title() {
+function Search() {
   return (
     <div className="row mb-5">
-      <div className="col-12">
-        <h2>Recent Products</h2>
+      <div className="col-md-12 col-xs-12 col-s-12 text-center">
+        <input
+          type="text"
+          placeholder="Search your favourite products..."
+          name="text"
+          className="search-input"
+        />
+      </div>
+    </div>
+  );
+}
+
+function Title() {
+  return (
+    <div className="row">
+      <div className="col-md-12 col-xs-12 col-s-12">
+        <h2 style={{ textAlign: "center" }}>Recent Products</h2>
       </div>
     </div>
   );
@@ -169,6 +186,7 @@ function RecentProduct({ recentProducts }: RecentProductProp) {
       <div className="site-section">
         <div className="container">
           <Title />
+          {/* <Search /> */}
           <ProductList products={productsList || []} />
           {pagination.totalPages !== pagination.page && (
             <ShowMore onClick={onClick} />
