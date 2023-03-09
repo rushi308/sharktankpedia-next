@@ -9,16 +9,33 @@ function Footer() {
           <div className="col-md-4">
             <h3 className="footer-heading mb-4">About Us</h3>
             <p className="text-white">
-              On Shark Tank Pedia, we will share infromation of the pitchers who have come to
-              Shark Tank India. We wish to use a digital platform to display
-              written data, graphical sales and statistic overviews, and
-              statistics in order to become a source of inspiration as well as a
-              source of inspiration. We enjoy media technology.And we want to
-              offer motivational content while making that work available to
-              everyone.
+              On Shark Tank Pedia, we will share infromation of the pitchers who
+              have come to Shark Tank India. We wish to use a digital platform
+              to display written data, graphical sales and statistic overviews,
+              and statistics in order to become a source of inspiration. We
+              enjoy media technology.And we want to offer motivational content
+              while making that work available to everyone.
             </p>
           </div>
-          <div className="col-md-4 ml-auto"></div>
+          <div className="col-md-4 ml-auto">
+            <ul className="list-unstyled float-left mr-5">
+              <li>
+                <a href="/privacyPolicy" style={{ color: "#fff" }}>
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/disclaimer" style={{ color: "#fff" }}>
+                  Disclaimer
+                </a>
+              </li>
+              <li>
+                <a href="/aboutUs" style={{ color: "#fff" }}>
+                  About us
+                </a>
+              </li>
+            </ul>
+          </div>
           <div className="col-md-4">
             <div>
               <h3 className="footer-heading mb-4">Connect With Us</h3>
